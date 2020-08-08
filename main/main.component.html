@@ -1,0 +1,154 @@
+<!--<html>
+    <head>
+        <title>Mainpage</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="#section3">Contact</a></li>
+                <li><a class="nav-link" routerLink="/login">Login In</a></li>
+                <li><a href="#section2">About</a></li>
+                <li><a href="#section1">Home</a></li>
+                </ul>
+        </nav>
+        <div class="#section1">
+            <div class="slider">
+                <div class="sliderchild">
+                <div class="imagecon"></div>
+                <div class="imagecon"></div>
+                <div class="imagecon"></div>
+
+                </div>
+            </div>
+        </div>
+       <div class="#section2">
+           <div class ="container">
+              <div class="box">
+                  <div class="icon"><i class="fa fa-bomb" aria-hidden="true"></i></div>
+              </div> 
+              <div class="box">
+            </div> 
+            <div class="box">
+            </div> 
+           </div>
+        </div>
+
+
+        
+    
+    </body>
+</html>-
+<div *ngIf=client></div>-->
+<div class="container1">
+    <div class="modal fade" id="loginModel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!--<div class="modal-header">
+                    <span class="close" data-dismiss="modal">&times;</span>
+                    <h4 class="modal-title">Update Form</h4>--
+                </div>-->
+                <div class="modal-body">
+                    <form #loginForm="ngForm" ><!--(ngSubmit)="loginSubmit(loginForm.value)" novalidate>-->
+                        <div class ="loginbox">
+                        <h1>Login</h1>
+                        <p>Username</p>
+                        <input type="text" name="loginId" ngModel #loginId="ngModel" required class="form-control"  placeholder = "Enter Username">
+                        <p>Password</p>
+                        <input type="password" name="password" ngModel #password="ngModel" required class="form-control" placeholder="Enter Password">
+                        <input type ="submit" (click)="loginSubmit(loginForm.value)"[disabled]="!loginForm.valid" name ="" value="login" data-dismiss="modal">
+                        <a href="#">forgot your password?</a><br>
+                        <a class="nav-link" routerLink="/register" data-dismiss="modal">Don't have an account?</a>
+                    </div>
+                   <!----<div *ngIf="loginForm.invalid && (loginForm.dirty || loginForm.touched)">Invalid error Occured</div>
+                                <div class="text-danger">
+                                    <div *ngIf="loginId.errors?.required">Please Enter The LoginId</div>
+                                    <div *ngIf="password.errors?.required">Please Enter The password</div>
+                                </div>-->
+                </form>
+                </div>
+               <!--- <div class="modal-footer">
+                    <button class="btn btn-primary btn-sm" (click)="updateClient()" data-dismiss="modal">Update</button>
+                </div>-->
+            </div>
+        </div>
+    </div>
+
+<html>
+    <head>
+        <title>Mainpage</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link href="assets/img/favicon.png" rel="icon">
+        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    </head>
+    <body>
+        <nav id="navbar">
+             <a class="brand">Healthy<span>Byte</span></a>
+            <ul>
+                
+                
+                <li><a href="#section1">Home</a></li>
+                <li><a href="#section2">About</a></li>
+                <li><a (click)="showLoginPopup(loginForm)">Login</a></li>
+                <li><a href="#section3">Contact</a></li>
+
+                </ul>
+        </nav>
+        <div id="section1">
+            <h3>This is homepage</h3>
+            <div class="slider">
+                <div class="sliderchild">
+                <div class="imagecon"></div>
+                <div class="imagecon"></div>
+                <div class="imagecon"></div>
+                <div class="imagecon"></div>
+
+                </div>
+            </div>
+        </div>
+       <div id="section2">
+           <h3>About</h3>
+           <h4>This website guides you to be healthy and live your life to the fullest</h4>
+           <div class ="container">
+            <div class="box">
+                <h5>Take some time to make your soul happy</h5>
+                <img [src]="imageUrl2" style="width: 150px;height: 150px;margin-left: 60px;margin-right: 10px;margin-top: 50px;">
+                <button type ="submit" name ="" value=""(click)="showLoginPopup(loginForm)">Yoga</button> 
+                    
+            </div> 
+              <div class="box">
+                <h5>You are what you eat</h5><br>
+                <img [src]="imageUrl" style="width: 150px;height: 150px;margin-left: 60px;margin-right: 10px;margin-top: 50px;">
+                <button type ="submit" name ="" value="Yoga"  (click)="showLoginPopup(loginForm)">Diet</button>  
+            </div> 
+            <div class="box">
+                <h5>Get up and make your body move</h5>
+                <img [src]="imageUrl3" style="width: 150px;height: 150px;margin-left: 60px;margin-right: 10px;margin-top: 50px;">
+                <button type ="submit" name ="" value="Yoga"(click)="showLoginPopup(loginForm)">Fitness</button>
+            </div> 
+           </div>
+        </div>
+        <div id ="section3">
+            <h1></h1>
+        </div>
+            <script>
+                var prevScrollpos = window.pageYOffset;
+                window.onscroll = function() {
+                var currentScrollPos = window.pageYOffset;
+                  if (prevScrollpos > currentScrollPos) {
+                    document.getElementById("navbar").style.top = "0";
+                  } else {
+                    document.getElementById("navbar").style.top = "-20px";
+                  }
+                  prevScrollpos = currentScrollPos;
+                }
+                </script>
+                
+            
+
+        
+    
+    </body>
+</html>
